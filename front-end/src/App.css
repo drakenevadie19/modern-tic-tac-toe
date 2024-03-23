@@ -3,11 +3,29 @@
 }
 
 .main-game-page {
-  color: white;
-  margin: 20px;
-  font: 32px "Century Gothic", Futura, sans-serif;
-  
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.board {
+  background-color: skyblue;
+  margin: 10px;
+  padding: 20px;
+}
+
+.rowOfThree {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.square {
+  background-color: #444;
+  color: white;
+  border: 1px dotted #999;
+  padding: 0;
+  font-size: 84px;
+  text-align: center;
+  width: 100px;
+  height: 100px;
 }
