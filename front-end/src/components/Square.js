@@ -1,8 +1,11 @@
-const Square = () => {
+import { useState } from "react";
+
+const Square = (props) => {
+    const [value, setValue] = useState(null);
     return (
-        <div className="square">
-            X
-        </div>
+        <button className="square" onClick={() => setValue('X')}>
+            {value}
+        </button>
     );
 }
 
