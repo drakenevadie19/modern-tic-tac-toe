@@ -5,7 +5,7 @@ import React, {useState} from 'react';
 const Game = () => {
     return (
         <div className="main-game-page">
-            <p>Game</p>
+            <p>Tic Tac Toe</p>
             <Board />
         </div>
     )
