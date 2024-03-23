@@ -8,11 +8,11 @@
   align-items: center;
 }
 
-.board {
+/* .board {
   background-color: skyblue;
   margin: 10px;
   padding: 20px;
-}
+} */
 
 .rowOfThree {
   display: flex;
@@ -33,4 +33,9 @@
 .square:focus {
   outline: none;
   background-color: #222;
+}
+
+.status {
+  margin: 20px;
+  font-size: 24px;
 }
