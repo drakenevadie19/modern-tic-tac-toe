@@ -1,10 +1,6 @@
 import Board from "./Board";
 import React, {useState} from 'react';
 
-// function calculateWinnde(squares) {
-
-// }
-
 const Game = () => {
     return (
         <div className="main-game-page">

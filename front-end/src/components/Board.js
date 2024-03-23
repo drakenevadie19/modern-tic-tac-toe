@@ -1,6 +1,23 @@
 import Square from "./Square";
 import React, { useState } from 'react';
 
+function calculateWinner(squares) {
+    const lines = [
+        [0, 1, 2], [3, 4, 5], [6, 7, 8],  // rows
+        [0, 3, 6], [1, 4, 7], [2, 5, 8], // colummns
+        [0, 4, 8], [1, 4, 7] // diagonals
+    ]
+
+    for (let line of lines) {
+        const [a ,b ,c] = line;
+        if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
+            return squares[a]; // 'X' or 'O'
+        }
+    }
+
+    return null;
+}
+
 const Board = () => {
     const initialSquares = Array(9).fill(null);
 
@@ -25,7 +42,10 @@ const Board = () => {
         );
     }
 
-    const status = `Next player: ${xIsNext ? 'X' : 'O'}`;
+    const winner = calculateWinner(square);
+    const status = winner 
+    ? `Winner: ${winner}`
+    : `Next player: ${xIsNext ? 'X' : 'O'}`;
 
     return (
         <div className="board">
