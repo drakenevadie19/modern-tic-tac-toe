@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import leagueData from './league-data';
 
 const TeamData = () => {
     const [allTeamInFiveLeagues, setAllTeamInFiveLeagues] = useState([]);
@@ -21,18 +22,24 @@ const TeamData = () => {
                 });
                 // console.log(response.data.response);
                 setCurrent(response.data.response);
-                current.map((team) => {
+                current.map((team) => (
                     teamProfile.push({
                         id: team.team.id,
                         name: team.team.name,
                         logo: team.team.logo
                     })
-                })
+                ));
+
+                allTeamInFiveLeagues.push(teamProfile);
             } catch (error) {
                 console.error(error);
             }
         };
-        fetchData(135, 2023);
+
+        leagueData.map((league) => (
+            fetchData(league.id, 2023)
+        ))
+        
     }); // Empty array as dependency to run only once on component mount
 
     
